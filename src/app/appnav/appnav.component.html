@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container-fluid">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" routerLink="/">
+      Learn It
+    </a>
+
+    <!-- Toggle for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Left menu -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+  <!-- Cart button -->
+ <li class="nav-item me-3">
+  <a class="nav-link position-relative" [routerLink]="['/cart']" routerLinkActive="active">
+    <i class="fas fa-shopping-cart fa-lg"></i>
+    <span 
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" 
+      *ngIf="cart.length > 0">
+      {{ cart.length }}
+    </span>
+    Cart
+  </a>
+</li>
+
+
+  <!-- Login button -->
+  <li class="nav-item">
+    <a class="btn btn-outline-light btn-sm" [routerLink]="['/login']">Login</a>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</nav>
